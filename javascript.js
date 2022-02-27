@@ -20,7 +20,6 @@ function computerPlay() {
 function playRound(playerSelection, computerSelection) {
   if (computerSelection == "Rock") {
     if (playerSelection.toLowerCase() == "rock") {
-      console.log("Tie!");
       result =
         "Tie!" +
         "\nPlayer score: " +
@@ -31,7 +30,6 @@ function playRound(playerSelection, computerSelection) {
     }
 
     if (playerSelection.toLowerCase() == "scissors") {
-      console.log("You lose! Rock beats Scissors!");
       computerScore++;
       result =
         "You lose! Rock beats Scissors!" +
@@ -43,7 +41,6 @@ function playRound(playerSelection, computerSelection) {
     }
 
     if (playerSelection.toLowerCase() == "paper") {
-      console.log("You win! Paper beats Scissors!");
       playerScore++;
       result =
         "You win! Paper beats Scissors!" +
@@ -57,7 +54,6 @@ function playRound(playerSelection, computerSelection) {
 
   if (computerSelection == "Paper") {
     if (playerSelection.toLowerCase() == "rock") {
-      console.log("You lose! Paper beats Rock!");
       computerScore++;
       result =
         "You lose! Paper beats Rock!" +
@@ -69,7 +65,6 @@ function playRound(playerSelection, computerSelection) {
     }
 
     if (playerSelection.toLowerCase() == "paper") {
-      console.log("Tie!");
       result =
         "Tie!" +
         "\nPlayer score: " +
@@ -80,7 +75,6 @@ function playRound(playerSelection, computerSelection) {
     }
 
     if (playerSelection.toLowerCase() == "scissors") {
-      console.log("You win! Scissors beats Paper!");
       playerScore++;
       result =
         "You win! Scissors beats Paper!" +
@@ -94,7 +88,6 @@ function playRound(playerSelection, computerSelection) {
 
   if (computerSelection == "Scissors") {
     if (playerSelection.toLowerCase() == "rock") {
-      console.log("You win! Rock beats Scissors!");
       playerScore++;
       result =
         "You win! Rock beats Scissors!" +
@@ -106,7 +99,6 @@ function playRound(playerSelection, computerSelection) {
     }
 
     if (playerSelection.toLowerCase() == "paper") {
-      console.log("You lose! Scissors beats Paper!");
       computerScore++;
       result =
         "You lose! Scissors beats Paper!" +
@@ -118,7 +110,6 @@ function playRound(playerSelection, computerSelection) {
     }
 
     if (playerSelection.toLowerCase() == "scissors") {
-      console.log("Tie!");
       result =
         "Tie!" +
         "\nPlayer score: " +
@@ -133,16 +124,6 @@ function playRound(playerSelection, computerSelection) {
   return;
 }
 
-/*
-function game() {
-  for (let i = 0; i < 5; i++) {
-    playRound(prompt("Rock, Paper, Scissors"), computerPlay());
-    console.log(i);
-  }
-}
-
-game();
-*/
 const rock = document.querySelector(".rock");
 const paper = document.querySelector(".paper");
 const scissors = document.querySelector(".scissors");
