@@ -157,3 +157,5 @@ function checkIfWon() {
     document.querySelector(".scissors").disabled = true;
   }
 }
+
+console.log("atanas e pedal");
