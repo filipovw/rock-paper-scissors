@@ -1,6 +1,7 @@
 let playerScore = 0;
 let computerScore = 0;
 let result = "";
+let result1 = "";
 
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
@@ -20,113 +21,76 @@ function computerPlay() {
 function playRound(playerSelection, computerSelection) {
   if (computerSelection == "Rock") {
     if (playerSelection.toLowerCase() == "rock") {
-      result =
-        "Tie!" +
-        "\nPlayer score: " +
-        playerScore +
-        "\nComputer score: " +
-        computerScore;
-      checkIfWon();
+      result = "Tie!";
+      result1 = "Rock ties with Rock!";
     }
 
     if (playerSelection.toLowerCase() == "scissors") {
+      result = "You lose!";
+      result1 = "Scissors is beaten by Rock!";
       computerScore++;
-      result =
-        "You lose! Rock beats Scissors!" +
-        "\nPlayer score: " +
-        playerScore +
-        "\nComputer score: " +
-        computerScore;
-      checkIfWon();
     }
 
     if (playerSelection.toLowerCase() == "paper") {
+      result = "You win!";
+      result1 = "Paper beats Scissors!";
       playerScore++;
-      result =
-        "You win! Paper beats Scissors!" +
-        "\nPlayer score: " +
-        playerScore +
-        "\nComputer score: " +
-        computerScore;
-      checkIfWon();
     }
   }
 
   if (computerSelection == "Paper") {
     if (playerSelection.toLowerCase() == "rock") {
+      result = "You lose!";
+      result1 = "Rock is beaten by Paper!";
       computerScore++;
-      result =
-        "You lose! Paper beats Rock!" +
-        "\nPlayer score: " +
-        playerScore +
-        "\nComputer score: " +
-        computerScore;
-      checkIfWon();
     }
 
     if (playerSelection.toLowerCase() == "paper") {
-      result =
-        "Tie!" +
-        "\nPlayer score: " +
-        playerScore +
-        "\nComputer score: " +
-        computerScore;
-      checkIfWon();
+      result = "Tie!";
+      result1 = "Paper ties with Paper!";
     }
 
     if (playerSelection.toLowerCase() == "scissors") {
+      result = "You win!";
+      result1 = "Scissors beats Paper!";
       playerScore++;
-      result =
-        "You win! Scissors beats Paper!" +
-        "\nPlayer score: " +
-        playerScore +
-        "\nComputer score: " +
-        computerScore;
-      checkIfWon();
     }
   }
 
   if (computerSelection == "Scissors") {
     if (playerSelection.toLowerCase() == "rock") {
+      result = "You win!";
+      result1 = "Rock beats Scissors!";
       playerScore++;
-      result =
-        "You win! Rock beats Scissors!" +
-        "\nPlayer score: " +
-        playerScore +
-        "\nComputer score: " +
-        computerScore;
-      checkIfWon();
     }
 
     if (playerSelection.toLowerCase() == "paper") {
+      result = "You lose!";
+      result1 = "Paper is beaten by Scissors!";
       computerScore++;
-      result =
-        "You lose! Scissors beats Paper!" +
-        "\nPlayer score: " +
-        playerScore +
-        "\nComputer score: " +
-        computerScore;
-      checkIfWon();
     }
 
     if (playerSelection.toLowerCase() == "scissors") {
-      result =
-        "Tie!" +
-        "\nPlayer score: " +
-        playerScore +
-        "\nComputer score: " +
-        computerScore;
-      checkIfWon();
+      result = "Tie!";
+      result1 = "Scissors ties with Scissors!";
     }
   }
 
-  document.querySelector(".results").innerText = result;
+  roundResult.innerHTML = result;
+  roundResult1.innerHTML = result1;
+  playerScoreBox.textContent = "Player: " + playerScore;
+  computerScoreBox.textContent = "Computer: " + computerScore;
+  checkIfWon();
   return;
 }
 
 const rock = document.querySelector(".rock");
 const paper = document.querySelector(".paper");
 const scissors = document.querySelector(".scissors");
+const roundResult = document.querySelector(".roundResult");
+const playerScoreBox = document.querySelector(".playerScoreBox");
+const computerScoreBox = document.querySelector(".computerScoreBox");
+const roundResult1 = document.querySelector(".roundResult1");
 
 rock.addEventListener("click", () => {
   playRound("Rock", computerPlay());
@@ -144,14 +108,16 @@ const results = document.querySelector(".results");
 
 function checkIfWon() {
   if (playerScore == 5) {
-    result += "\nI won!";
+    roundResult.textContent = "You win!";
+    roundResult1.textContent = "Refresh the page (F5) to play again!";
     document.querySelector(".rock").disabled = true;
     document.querySelector(".paper").disabled = true;
     document.querySelector(".scissors").disabled = true;
   }
 
   if (computerScore == 5) {
-    result += "\nI lost!";
+    roundResult.textContent = "You lose!";
+    roundResult1.textContent = "Refresh the page (F5) to play again!";
     document.querySelector(".rock").disabled = true;
     document.querySelector(".paper").disabled = true;
     document.querySelector(".scissors").disabled = true;

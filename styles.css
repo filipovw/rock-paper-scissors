@@ -1,0 +1,73 @@
+*, *::before, *::after {
+    box-sizing: border box;
+    font-family: Gotham Rounded, sans-serif;
+    font-weight: normal;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(to right, #5C258D, #4389A2);
+}
+
+.title {
+    font-size: 2.5rem;
+    color: #fff;
+    text-align: center;
+    padding: 50px;
+    margin: 0;
+    font-weight: bold;
+    background: rgba(0, 0, 0, .3);
+}
+
+.results {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.scores {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 8rem;
+    color: white;
+    font-size: 1.5rem;
+    margin-top: 5rem;
+    align-items: center;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 8rem;
+
+}
+
+.buttons>button {
+    cursor: pointer;
+    border: none;
+    border-radius: 15px;
+    font-size: 8rem;
+    width: 10rem;
+    height: 10rem;
+}
+
+.roundResult {
+    font-size: 3.5rem;
+    color: #fff;
+    text-align: center;
+    margin-top: 2rem;
+    font-weight: bold;
+}
+
+.roundResult1 {
+    font-size: 2rem;
+    color: #fff;
+    text-align: center;
+    margin-top: 2rem;
+    font-weight: bold;
+}
