@@ -76,8 +76,8 @@ function playRound(playerSelection, computerSelection) {
     }
   }
 
-  roundResult.innerHTML = result;
-  roundResult1.innerHTML = result1;
+  roundResult.textContent = result;
+  roundResult1.textContent = result1;
   playerScoreBox.textContent = "Player: " + playerScore;
   computerScoreBox.textContent = "Computer: " + computerScore;
   checkIfWon();
